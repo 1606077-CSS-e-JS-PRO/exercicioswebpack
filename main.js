@@ -1,24 +1,20 @@
 const { juntaDoisNomes } = require("./js/gerenciaDeNomes")
-
+const { mostrarResultadoNaTela, pegarValorTextualDaTela, adicionarEventoClick } = require("./js/tela")
 require("./style/style.css")
 
-document.getElementById("botaoConcatenar")
-    .addEventListener("click", inicializarConcat)
+adicionarEventoClick("botaoConcatenar", inicializarConcat)
+// adicionarEventoClick("botaoDividir", inicializarDivisao)
 
 function inicializarConcat() {
     // Entradas
-    const elementoNome = document.getElementById("inputNome")
-    const elementoSobrenome = document.getElementById("inputSobrenome")
-
-    const nome = elementoNome.value
-    const sobrenome = elementoSobrenome.value
+    const nome = pegarValorTextualDaTela("inputNome")
+    const sobrenome = pegarValorTextualDaTela("inputSobrenome")
 
     // Processamento
     let resultado = juntaDoisNomes(nome, sobrenome)
 
     // Saídas
-    const elementoResultado = document.getElementById("saidaConcat")
-    elementoResultado.innerHTML = resultado
+    mostrarResultadoNaTela("saidaConcat", resultado)
 }
 
 
