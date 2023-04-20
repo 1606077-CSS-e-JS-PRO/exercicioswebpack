@@ -1,6 +1,6 @@
 const { juntaDoisNomes } = require("./js/gerenciaDeNomes")
 const { mostrarResultadoNaTela, pegarValorTextualDaTela, adicionarEventoClick } = require("./js/tela")
-require("./style/style.css")
+require("./style/style.scss")
 
 adicionarEventoClick("botaoConcatenar", inicializarConcat)
 // adicionarEventoClick("botaoDividir", inicializarDivisao)
